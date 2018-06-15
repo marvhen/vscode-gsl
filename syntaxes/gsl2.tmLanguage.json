@@ -1,0 +1,76 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "gsl2",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.gsl2",
+				"match": "\\b(if|elsif|else|endif|while|endwhile|for|endfor|return)\\b"
+			},
+			{
+				"name":"entity.name.function.gsl2",
+				"match": "\\b(function|endfunction)\\b"
+			}]
+		},
+		"strings": {
+			"patterns":[
+			{
+				"name": "string.quoted.double.gsl2",
+				"begin": "\"",
+				"end": "\"",
+				"patterns": [
+					{
+						"name": "constant.character.escape.gsl2",
+						"match": "\\\\."
+					}
+				]
+			},
+			{
+				"name":"string.other.template.gsl2",
+				"match":"^\\s?*(>)(.*)",
+				"captures": {
+					"1": { "name": "string.other.template.begin.gsl2" },
+					"2": { 
+						"name": "string.other.template.content.gsl2",
+						"patterns": [
+							{
+								"include": ""
+							}
+						]
+					}
+				}
+			}]
+		},
+		"comments": {
+			"name": "comment",
+			"patterns":[
+				{
+					"name":"comment.line.script.gsl2",
+					"match": "^\\.-.*"
+				},
+				{
+					"name":"comment.line.template.gsl2",
+					"match": "#.*"
+				},
+				{
+					"name":"comment.block.gsl2",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+
+		}
+	},
+	"scopeName": "source.gsl2"
+}

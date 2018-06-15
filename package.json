@@ -1,0 +1,43 @@
+{
+    "name": "vscode-gsl",
+    "displayName": "GSL General Schema Language",
+    "description": "Language extension for GSL, the General Schema Language origianlly developed by iMatix Corporation",
+    "version": "1.0.0",
+    "publisher": "marvhen",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "GSL",
+        "General Schema Language",
+        "iMatix"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marvhen/vscode-gsl"
+    },
+    "contributes": {
+        "languages": [{
+            "id": "gsl2",
+            "aliases": ["GSL", "General Schema Language", "GSLGen", "GSL (iMatix)"],
+            "extensions": [".gsl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gsl2",
+            "scopeName": "source.gsl2",
+            "path": "./syntaxes/gsl2.tmLanguage.json"
+        }],
+        "themes": [
+            {
+                "label": "GSL General Schema Language Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/gsl2_dark.tmTheme.json"
+            }    
+        ]
+    }
+}

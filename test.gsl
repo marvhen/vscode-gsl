@@ -1,0 +1,29 @@
+.- this is a comment
+#this is a comment
+/* this is a comment*/
+/*  this
+    is
+    a
+    comment */
+> this is a template string
+> this is a template string
+.
+. function thisIsAFunction(param1, param2)
+    for element
+        if element.someAttribute == "thisIsAString"
+            > output this
+        elsif element.someAttribute == "thisIsAnotherString"
+            > output something else
+        else
+            > output nothing
+        endif
+    endfor
+
+    while waiting
+        return 0
+    endwhile
+
+    return 0
+.endfunction
+
+> the end
